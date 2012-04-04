@@ -1,0 +1,7 @@
+<UxTesting>
+	<TestConfig name="testXY">
+		<TestVersion name="A" percentage="20"/>
+		<TestVersion name="B" percentage="20"/>
+		<TestVersion name="C" percentage="60"/>
+	</TestConfig>
+</UxTesting>
