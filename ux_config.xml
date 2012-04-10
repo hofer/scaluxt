@@ -1,0 +1,6 @@
+<UxTesting>
+    <TestConfig name="GetAccessBarTest">
+        <TestVersion name="yellow" percentage="50"/>
+        <TestVersion name="more_yellow" percentage="50"/>
+    </TestConfig>
+</UxTesting>

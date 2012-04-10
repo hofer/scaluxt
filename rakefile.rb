@@ -33,7 +33,6 @@ task :package => [:jar, :jar_test] do
   sh "cd deploy && zip -b lib/ #{package_name}-#{build_version} lib/*"
   sh "cd deploy && md5 -q #{package_name}-#{build_version}.zip > #{package_name}-#{build_version}.md5"
   sh "rm -rf deploy/#{package_name}-#{build_version}.jar deploy/lib"
-  sh "echo \"filename: #{package_name}-#{build_version}.zip\" > deploy/#{package_name}-#{build_version}.torrent"
 end
 
 task :run_package => [:package] do

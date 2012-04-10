@@ -41,7 +41,7 @@ class ScalatraUxTest extends ScalatraFilter
     val versionName = params("version")
     val eventName = params("eventName")
 	
-	trackEvent(testName, versionName, eventName)
+	trackEvent(testName, eventName)
 	val text = """Clicked on Version: """ + versionName + """ for test """ + testName + """ and """ + eventName
     serveContent(text)
   }

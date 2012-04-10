@@ -3,6 +3,8 @@ package com.thoughtworks.scaluxt
 import com.yammer.metrics.Metrics
 import com.yammer.metrics.core.Counter
 import scala.collection.mutable.HashMap
+import java.util.concurrent.TimeUnit
+import com.yammer.metrics.reporting.GraphiteReporter
 
 object UxVersion {
 	val A = "A"
@@ -17,10 +19,10 @@ case class UxVersion(val testName:String, val versionName:String, val percentage
 			metric = Some(Metrics.newCounter(classOf[UxVersion], fullVersionName + "-" + eventName))
 			eventMetrics.put(eventName, metric.get)
 		}
-		
+
 		metric.get.inc
 	}
-	
+
 	private val fullVersionName = testName + "-" + versionName
 	private val usageCount = Metrics.newCounter(classOf[UxVersion], fullVersionName)
 	private val eventMetrics = new HashMap[String, Counter]
